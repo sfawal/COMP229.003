@@ -1,6 +1,8 @@
+<!--contact page for portfolio -->
+
 <% include partials/header.ejs %>
 
-<html>
+<!--Styling for contact form-->
   <head>
     <style>
       body {
@@ -13,31 +15,27 @@
       select,
       textarea {
         width: 100%;
-        border: 1px solid #eeeeee;
-        border-radius: 4px;
         box-sizing: border-box;
         margin-top: 6px;
         margin-bottom: 20px;
-        resize: vertical;
       }
       input[type=submit] {
         background-color: #6f7977;
-        color: #ffffff;
+        color: #f3eded;
         padding: 10px 30px;
-        border: none;
-        border-radius: 2px;
-        cursor: pointer;
+        border-radius: 5px;
       }
     
       .container {
         border-radius: 20px;
-        background-color: #e6e6e6;
+        background-color: #f3eded;
         padding: 12px;
       }
     </style>
   </head>
   <br><br>
   <body>
+      <!--my contact info -->
     <center>
     <h5 style="padding-left: 25px;">Syeda Fawal </h5>
     <img src="/images/image.jpg" alt="logo" style="width: 120px; align-content: center; padding-left: 25px;">
@@ -46,6 +44,7 @@
         Email: Sfawal@my.centennialcollege.ca <br>
     </p></center>
 
+    <!-- contact form -->
     <h2 style="padding-left: 80px;">Contact Form</h2>
     <div class="container">
       <form action="/form/submit" method="POST">
@@ -61,12 +60,9 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Type a message.." style="height:200px"></textarea>
         <input type="submit" value="Send" class="nav-link active" href = "/home">
-
-
       </form>
     </div>
   </body>
-</html>
 
 <br><br><br>
   <% include partials/footer.ejs %>
