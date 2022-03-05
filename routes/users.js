@@ -6,13 +6,13 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-/* GET julio page. */
-router.get('/julio', function(req, res, next) {
+/* GET Syeda page. */
+router.get('/syeda', function(req, res, next) {
   res.render(
     'users', 
     { 
       title: 'Users',
-      name: 'Julio'
+      name: 'Syeda'
     }
   );
 });

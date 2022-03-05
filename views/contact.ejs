@@ -1,4 +1,5 @@
 <!--contact page for portfolio -->
+<!--used https://www.w3schools.com/howto/howto_css_contact_form.asp as a reference to learn how to make a contact page.-->
 
 <% include partials/header.ejs %>
 
@@ -24,6 +25,7 @@
         color: #f3eded;
         padding: 10px 30px;
         border-radius: 5px;
+        cursor: pointer;
       }
     
       .container {
@@ -48,6 +50,7 @@
     <h2 style="padding-left: 80px;">Contact Form</h2>
     <div class="container">
       <form action="/form/submit" method="POST">
+
         <label for="labelname">Name</label>
         <input type="text" id="firstname" name="name">
         
@@ -59,7 +62,8 @@
         
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Type a message.." style="height:200px"></textarea>
-        <input type="submit" value="Send" class="nav-link active" href = "/home">
+        
+        <a href="/home"> <input type ="submit"></a>
       </form>
     </div>
   </body>
