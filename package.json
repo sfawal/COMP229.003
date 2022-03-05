@@ -1,0 +1,21 @@
+{
+  "name": "comp229.003",
+  "version": "1.0.0",
+  "description": "COMP229.003 Code Example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Week",
+    "Code",
+    "Example",
+    "COMP229",
+    "SEC003"
+  ],
+  "author": "Syeda Fawal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
