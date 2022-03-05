@@ -1,0 +1,72 @@
+<% include partials/header.ejs %>
+
+<html>
+  <head>
+    <style>
+      body {
+        font-family:Helvetica;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      input[type=text],
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid #eeeeee;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 20px;
+        resize: vertical;
+      }
+      input[type=submit] {
+        background-color: #6f7977;
+        color: #ffffff;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+    
+      .container {
+        border-radius: 20px;
+        background-color: #e6e6e6;
+        padding: 12px;
+      }
+    </style>
+  </head>
+  <br><br>
+  <body>
+    <center>
+    <h5 style="padding-left: 25px;">Syeda Fawal </h5>
+    <img src="/images/image.jpg" alt="logo" style="width: 120px; align-content: center; padding-left: 25px;">
+    <p>
+        Phone Number: 647-739-4218 <br>
+        Email: Sfawal@my.centennialcollege.ca <br>
+    </p></center>
+
+    <h2 style="padding-left: 80px;">Contact Form</h2>
+    <div class="container">
+      <form action="/form/submit" method="POST">
+        <label for="labelname">Name</label>
+        <input type="text" id="firstname" name="name">
+        
+        <label for="labelname">Last Name</label>
+        <input type="text" id="lastname" name="lastname">
+        
+        <label for="labelname">E-mail Address</label>
+        <input type="text" id="mail" name="e-mail">
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Type a message.." style="height:200px"></textarea>
+        <input type="submit" value="Send" class="nav-link active" href = "/home">
+
+
+      </form>
+    </div>
+  </body>
+</html>
+
+<br><br><br>
+  <% include partials/footer.ejs %>
