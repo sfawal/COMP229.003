@@ -8,7 +8,7 @@
 /**
  * Module dependencies.
  */
-
+var dbConfig = require('./config/db');
 var app = require('./config/app');
 var debug = require('debug')('comp229003:server');
 var http = require('http');
@@ -17,6 +17,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
+let db = dbConfig();
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
@@ -29,6 +30,7 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
+
 
 server.listen(port);
 server.on('error', onError);
