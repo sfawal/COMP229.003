@@ -8,6 +8,10 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let session = require('express-session');
+let flash = require('connect-flash');
+let passport = require('passport');
+
 
 //Get route module
 let indexRouter = require('../routes/index');
@@ -15,6 +19,12 @@ let usersRouter = require('../routes/users');
 let inventoryRouter = require('../routes/inventory');
 
 let app = express();
+
+app.use(session({
+  saveUninitialized: true,
+  resave: true,
+  secret: "sessionSecret"
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
@@ -26,6 +36,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
+
+// Sets up passport
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

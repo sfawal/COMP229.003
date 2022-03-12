@@ -64,6 +64,17 @@
             <i class="fa fa-address-book"></i> Contact Me </a>
         </a>
       </li>
+      <li class="nav-item dropdown">
+        <% if (title == "Business Contacts List" || title == "Add a new Contact") { %>
+          <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Business Contacts</a>
+        <% } else { %>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Business Contacts</a>
+        <% } %>       
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/inventory/list">Contact List</a></li>
+          <li><a class="dropdown-item" href="/inventory/add">Add a new Contact</a></li>
+        </ul>
+      </li>
       
     </ul>
   </nav>

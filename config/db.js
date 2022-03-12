@@ -1,3 +1,8 @@
+// File name: db.js
+// Student name: Syeda Fawal
+// Student Id: 301155522
+// Date: March 12, 2022
+
 //For production enviorment never expose your connection string. 
 let URI = "mongodb+srv://dbadmin:CgR1z4e8EgdUHbrr@clusters003.yde1q.mongodb.net/mydb?retryWrites=true&w=majority"
 
