@@ -2,6 +2,7 @@
 // Student name: Syeda Fawal
 // Student Id: 301155522
 // Date: March 12, 2022
+
 console.log("This goes to client side.");
 
 if(getTitle == "Inventory List"){
