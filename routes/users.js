@@ -18,8 +18,8 @@ router.get('/signup', userController.renderSignup);
 router.post('/signup', userController.signup);
 
 // Sign-in
-router.get('/signin', userController.renderSignin);
-router.post('/signin', userController.signin);
+router.get('/login', userController.renderLogin);
+router.post('/login', userController.login);
 
 // Sign out
 router.get('/signout', userController.signout);

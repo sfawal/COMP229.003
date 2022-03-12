@@ -5,26 +5,36 @@
 
 let express = require('express');
 let router = express.Router();
-
-
 //connect to our model
 let inventoryController = require('../controllers/inventory');
+
+// helper function for guard purposes
+function requireAuth(req, res, next)
+{
+    // check if the user is logged in
+    if(!req.isAuthenticated())
+    {
+        req.session.url = req.originalUrl;
+        return res.redirect('/users/login');
+    }
+    next();
+}
 
 /* GET list. */
 router.get('/list', inventoryController.list); 
 
 // Get method to Render the Add Items Page
-router.get('/add', inventoryController.displayAddPage);
+router.get('/add',requireAuth, inventoryController.displayAddPage);
 // Post method to handle the Add Items process
-router.post('/add', inventoryController.processAddPage);
+router.post('/add',requireAuth, inventoryController.processAddPage);
 
-// Get method to Render the update Items Page
-router.get('/update/:id', inventoryController.displayEditPage);
-// Post method to handle the update Items process
-router.post('/update/:id', inventoryController.processEditPage);
+// Get method to Render the update Page
+router.get('/update/:id',requireAuth, inventoryController.displayEditPage);
+// Post method to handle the update process
+router.post('/update/:id',requireAuth, inventoryController.processEditPage);
 
-// Precess Delete items
-router.get('/delete/:id', inventoryController.performDelete);
+// Precess Delete contacts
+router.get('/delete/:id',requireAuth, inventoryController.performDelete);
 
 
 module.exports = router;

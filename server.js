@@ -32,7 +32,7 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
- let passport = passportConfig();
+let passport = passportConfig();
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);

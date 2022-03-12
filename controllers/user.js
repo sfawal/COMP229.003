@@ -86,10 +86,10 @@ module.exports.signup = function(req, res, next) {
   };
 
 
-  module.exports.renderSignin = function(req, res, next) {
+  module.exports.renderLogin = function(req, res, next) {
     if (!req.user) {
-      res.render('auth/signin', {
-        title: 'Sign-in Form',
+      res.render('auth/login', {
+        title: 'Login Form',
         messages: req.flash('error') || req.flash('info')
       });
     } else {
@@ -99,10 +99,10 @@ module.exports.signup = function(req, res, next) {
   };
 
  
-module.exports.signin = function(req, res, next){
+module.exports.login = function(req, res, next){
     passport.authenticate('local', {   
-      successRedirect: req.session.url || '/',
-      failureRedirect: '/users/signin',
+      successRedirect: req.session.url || '/inventory/list',
+      failureRedirect: '/users/login',
       failureFlash: true
     })(req, res, next);
     delete req.session.url;
